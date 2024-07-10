@@ -49,7 +49,7 @@ class UserController extends Controller
         $user->password = $request->password;
         $res = $user->save();
         if ($res) {
-            Mail::to($request->email)->send(new UserEmail($emailVar));
+            // Mail::to($request->email)->send(new UserEmail($emailVar));
             return response()->json('SuccessFully');
         } else {
             return response()->json('Not Added');
